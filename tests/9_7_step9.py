@@ -10,10 +10,14 @@
 Программа должна вывести самое тяжёлое слово в строке.
 """
 
-s = list(map(str, input().split()))
+s = [input() for i in range(4)]
 weight = []
-for i in s:
-    for el in i:
+for i in range(4):
+    count = 0
+    for el in s[i]:
+        count += ord(el)
+    weight.append(count)
 
-
-print()
+max_value = max(weight)
+max_index = weight.index(max_value)
+print(s[max_index])
