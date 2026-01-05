@@ -23,10 +23,12 @@
 num = int(input())  # считываем число
 n = len(str(num))  # количество разрядов числа
 Flag = False
+count = 0
 for i in range(1, n + 1):  # проходим по всем разрядам числа от 1 до n
     digit = num // 10 ** (n - i) % 10  # получаем i-ю цифру числа
     if digit % 2 == 0:
-        print(f"{i}-я четная цифра равна {digit}")
+        count += 1
+        print(f"{count}-я четная цифра равна {digit}")
         Flag = True
 if not Flag:
     print("Четных цифр в числе нет")
